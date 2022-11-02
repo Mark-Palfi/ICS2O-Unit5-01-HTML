@@ -9,10 +9,21 @@
  */
 function enterClicked() {
   // input
-  const street_name = document.getElementById("street-name").value
-  const street_number = parseInt(document.getElementById("street-number").value)
+  const userNumber = document.getElementById("user-number").value
+
+  //process
+  // returns a random integer from 1 to 10
+  const machineNumber = Math.floor(Math.random() * 6) + 1
+  console.log(machineNumber)
 
   // output
-  document.getElementById("address").innerHTML =
-    "You live on: " + street_name + ", house " + street_number + "."
+  if (userNumber == machineNumber) {
+    document.getElementById("message").innerHTML =
+    "That is correct."
+  }
+
+   if (userNumber != machineNumber) {
+    document.getElementById("message").innerHTML =
+    "That is incorrect."
+   }
 }
